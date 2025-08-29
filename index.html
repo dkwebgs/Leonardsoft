@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Leonardsoft Pvt Ltd - Professional website design, development, SEO, and digital marketing services">
+    <meta name="keywords" content="web design, web development, SEO, digital marketing, e-commerce, responsive websites">
+    <title>Leonardsoft Pvt Ltd | Digital Solutions Provider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" >
+</head>
+<body>
+    <!-- Floating buttons -->
+    <div class="floating-buttons">
+        <div class="floating-btn whatsapp-btn" onclick="openWhatsApp()">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="floating-btn email-btn" onclick="openEmail()">
+            <i class="fas fa-envelope"></i>
+        </div>
+    </div>
+    
+    <!-- Contact Form Modal -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Get in Touch</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Mobile Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your mobile number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-rocket"></i>
+                Leonard<span>soft</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#" class="cta-button" id="getStartedBtn">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text fade-in">
+                <h1>Transform Your Digital Presence</h1>
+                <p>Leonardsoft Pvt Ltd provides cutting-edge website design, development, SEO, and digital marketing solutions that drive growth and maximize your online potential.</p>
+                <a href="#services" class="cta-button">Explore Our Services</a>
+            </div>
+            <div class="hero-image fade-in">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Digital Solutions">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Services</h2>
+                <p>We provide comprehensive digital solutions to help your business thrive in the online world.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Design & Development</h3>
+                    <p>Custom, responsive websites that captivate your audience and deliver exceptional user experiences across all devices.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>SEO Optimization</h3>
+                    <p>Strategic search engine optimization to improve your visibility, drive organic traffic, and boost conversions.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Digital Marketing</h3>
+                    <p>Targeted marketing campaigns across social media, email, and PPC to expand your reach and grow your business.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-Commerce Solutions</h3>
+                    <p>Complete online store setup with secure payment integration and inventory management systems.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App Development</h3>
+                    <p>Native and cross-platform mobile applications designed to engage users and enhance brand loyalty.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Brand Identity</h3>
+                    <p>Creative branding solutions including logo design, style guides, and visual storytelling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <!-- Portfolio Section -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="section-title fade-in">
+            <h2>Our Portfolio</h2>
+            <p>Explore our recent projects and see the results we've delivered for our clients.</p>
+        </div>
+        
+        <div class="portfolio-filters fade-in">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="web">Web Design</button>
+            <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+            <button class="filter-btn" data-filter="seo">SEO</button>
+            <button class="filter-btn" data-filter="marketing">Marketing</button>
+            <button class="filter-btn" data-filter="erp">ERP Systems</button>
+        </div>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item fade-in" data-category="web">
+                <img src="assets/images/whatsapp-automation-services.PNG" alt="TeleWapp WhatsApp Automation Platform" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>TeleWapp – WhatsApp Automation</h3>
+                    <p>
+                        WhatsApp marketing & automation platform with Shopify, WooCommerce, Zoho CRM & HubSpot integrations for smarter customer engagement.
+                    </p>
+                    <a href="https://app.telewapp.com/" target="_blank" class="portfolio-link">
+                        View Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Travel Agency Website -->
+            <div class="portfolio-item fade-in" data-category="web">
+                <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Fly to Glam Travel Website" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Fly to Glam</h3>
+                    <p>Travel agency website with booking functionality and destination showcases</p>
+                    <a href="https://flytoglam.com" target="_blank" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Travel Holidays Website -->
+            <div class="portfolio-item fade-in" data-category="web">
+                <img src="https://images.unsplash.com/photo-1505832018823-50331d70d237?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1208&q=80" alt="Fly Yatra Holidays Website" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Fly Yatra Holidays</h3>
+                    <p>Comprehensive travel portal with tour packages and booking system</p>
+                    <a href="https://flyyatraholidays.com" target="_blank" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- E-commerce Website -->
+            <div class="portfolio-item fade-in" data-category="ecommerce">
+                <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="E-commerce Website" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Naiko E-commerce</h3>
+                    <p>Modern e-commerce platform with product management and payment integration</p>
+                    <a href="https://naiko.bonobolabs.site/" target="_blank" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Laravel E-commerce -->
+            <div class="portfolio-item fade-in" data-category="ecommerce">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Laravel E-commerce" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Laravel E-commerce</h3>
+                    <p>Custom e-commerce solution built with Laravel framework</p>
+                    <a href="#" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- IT Solutions Website -->
+            <div class="portfolio-item fade-in" data-category="web">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Smile IT Solutions Website" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Smile IT Solutions</h3>
+                    <p>Corporate website for IT services company with service showcase</p>
+                    <a href="https://www.smileitsolutions.com/" target="_blank" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Travel Website -->
+            <div class="portfolio-item fade-in" data-category="web">
+                <img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" alt="Divritin Travel Website" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Divritin Travel</h3>
+                    <p>Travel booking website with destination guides and package options</p>
+                    <a href="https://divritin.com/" target="_blank" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- School ERP System -->
+            <div class="portfolio-item fade-in" data-category="erp">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Online Easy School ERP" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Online Easy School ERP</h3>
+                    <p>Comprehensive school management system with student and admin portals</p>
+                    <a href="https://onlineeasyschool.com" target="_blank" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Restaurant Website -->
+            <div class="portfolio-item fade-in" data-category="web">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Umang Restaurant Website" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3>Umang Restaurant</h3>
+                    <p>Restaurant website with menu display, online reservation, and gallery</p>
+                    <a href="https://umangrestaurant.com" target="_blank" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>About Leonardsoft</h2>
+                <p>We're a passionate team of digital experts dedicated to helping businesses succeed online.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2>Why Choose Us?</h2>
+                    <p>Founded in 2015, Leonardsoft Pvt Ltd has grown to become a trusted partner for businesses seeking to establish and expand their digital footprint.</p>
+                    <p>Our team of designers, developers, and marketers collaborate closely with clients to create customized solutions that align with their unique goals and challenges.</p>
+                    <p>We pride ourselves on delivering exceptional results, transparent communication, and ongoing support to ensure your continued success in the digital landscape.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-box">
+                            <div class="number">250+</div>
+                            <div class="label">Projects Completed</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">98%</div>
+                            <div class="label">Client Satisfaction</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">10+</div>
+                            <div class="label">Team Members</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Our Team">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team for any inquiries or project discussions.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Our Location</h3>
+                            <p>Aryan Computer Center</p>
+                            <p>Balwarganj, Sujanganj, Jaunpur</p>
+                            <p>Uttar Pradesh, 222201</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone & Email</h3>
+                            <p>+91 9315218918</p>
+                            <p>dkweb2025@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Working Hours</h3>
+                            <p>Monday - Friday: 9AM - 6PM</p>
+                            <p>Saturday: 10AM - 2PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form fade-in">
+                    <form>
+                        <div class="form-group">
+                            <label for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" placeholder="Enter subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Your Message</label>
+                            <textarea id="contact-message" placeholder="Enter your message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Leonardsoft</h3>
+                    <p>Transforming digital experiences through innovative design, development, and marketing solutions that drive business growth.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Design & Development</a></li>
+                        <li><a href="#">SEO & Digital Marketing</a></li>
+                        <li><a href="#">E-Commerce Solutions</a></li>
+                        <li><a href="#">Mobile App Development</a></li>
+                        <li><a href="#">Brand Identity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Aryan Computer center , balwarganj, sujanganj, jaunpur , uttar pradesh, 222201.</p>
+                    <p><i class="fas fa-phone"></i> +91 9315218918</p>
+                    <p><i class="fas fa-envelope"></i> dkweb2025@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2018 Leonardsoft Pvt Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+ <script src="assets/js/main.js" ></script>
+</body>
+</html>
