@@ -62,21 +62,31 @@
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h2>Get in Touch</h2>
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Enter your name" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Mobile Number</label>
-                    <input type="tel" id="phone" placeholder="Enter your mobile number" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
-                </div>
-                <button type="submit" class="submit-btn">Submit</button>
-            </form>
+<form id="contactFormModal">
+    <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+        <label for="phone">Mobile Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </div>
+    <div class="form-group">
+        <label for="contact-subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Enter subject">
+    </div>
+    <div class="form-group">
+        <label for="contact-message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+
         </div>
     </div>
 
@@ -396,25 +406,30 @@
                 </div>
                 
                 <div class="contact-form fade-in">
-                    <form>
-                        <div class="form-group">
-                            <label for="contact-name">Your Name</label>
-                            <input type="text" id="contact-name" placeholder="Enter your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-email">Email Address</label>
-                            <input type="email" id="contact-email" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-subject">Subject</label>
-                            <input type="text" id="contact-subject" placeholder="Enter subject">
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-message">Your Message</label>
-                            <textarea id="contact-message" placeholder="Enter your message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
+<form id="contactFormSection">
+    <div class="form-group">
+        <label for="contact-name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+        <label for="phone">Mobile Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+    </div>
+    <div class="form-group">
+        <label for="contact-email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </div>
+    <div class="form-group">
+        <label for="contact-subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Enter subject">
+    </div>
+    <div class="form-group">
+        <label for="contact-message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Send Message</button>
+</form>
+
                 </div>
             </div>
         </div>
@@ -533,14 +548,37 @@
     });
     
     // Form submission
-    const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', (e) => {
+document.addEventListener("DOMContentLoaded", function () {
+  function handleFormSubmit(formId) {
+    const form = document.getElementById(formId);
+
+    if (form) {
+      form.addEventListener("submit", function (e) {
         e.preventDefault();
-        // Here you would normally handle form submission to a server
-        alert('Thank you for your message! We will get back to you soon.');
-        contactForm.reset();
-        closeModal();
-    });
+
+        const formData = new FormData(form);
+
+        fetch("send_mail.php", {
+          method: "POST",
+          body: formData,
+        })
+          .then((res) => res.text())
+          .then((data) => {
+            alert(data);
+            form.reset();
+          })
+          .catch((err) => {
+            console.error("Error:", err);
+          });
+      });
+    }
+  }
+
+  handleFormSubmit("contactFormModal");
+  handleFormSubmit("contactFormSection");
+});
+
+
     
     // Portfolio filtering
     const filterButtons = document.querySelectorAll('.filter-btn');
