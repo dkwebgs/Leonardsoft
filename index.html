@@ -45,6 +45,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" >
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+      emailjs.init("VbJ_sCOwtaRPYKYTz"); // Replace with your EmailJS public key
+  })();
+</script>
+
 </head>
 <body>
     <!-- Floating buttons -->
@@ -558,18 +566,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const formData = new FormData(form);
 
-        fetch("send_mail.php", {
-          method: "POST",
-          body: formData,
-        })
-          .then((res) => res.text())
-          .then((data) => {
-            alert(data);
-            form.reset();
-          })
-          .catch((err) => {
-            console.error("Error:", err);
-          });
+        // Map form fields to template variables
+        const templateParams = {
+          from_name: formData.get("name"),
+          from_email: formData.get("email"),
+          phone: formData.get("phone"),
+          subject: formData.get("subject"),
+          message: formData.get("message"),
+        };
+
+        emailjs
+          .send("service_mxwt4op", "template_im70dnp", templateParams)
+          .then(
+            function (response) {
+              alert("✅ Message sent successfully!");
+              form.reset();
+            },
+            function (error) {
+              console.error("Error sending email:", error);
+              alert("❌ Failed to send message. Try again later.");
+            }
+          );
       });
     }
   }
@@ -577,7 +594,6 @@ document.addEventListener("DOMContentLoaded", function () {
   handleFormSubmit("contactFormModal");
   handleFormSubmit("contactFormSection");
 });
-
 
     
     // Portfolio filtering
