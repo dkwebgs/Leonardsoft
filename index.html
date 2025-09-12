@@ -558,7 +558,7 @@
         }
     });
     
-    // Form submission
+// Form submission
 document.addEventListener("DOMContentLoaded", function () {
   function handleFormSubmit(formId) {
     const form = document.getElementById(formId);
@@ -566,6 +566,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (form) {
       form.addEventListener("submit", function (e) {
         e.preventDefault();
+
+        const submitBtn = form.querySelector(".submit-btn");
+        const originalText = submitBtn.innerHTML;
+
+        // Show loader on button
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span class="loader"></span> Sending...`;
 
         const formData = new FormData(form);
 
@@ -580,22 +587,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
         emailjs
           .send("service_mxwt4op", "template_im70dnp", templateParams)
-          .then(
-            function (response) {
-              alert("✅ Message sent successfully!");
-              form.reset();
-            },
-            function (error) {
-              console.error("Error sending email:", error);
-              alert("❌ Failed to send message. Try again later.");
-            }
-          );
+          .then(() => {
+            alert("✅ Message sent successfully!");
+            form.reset();
+          })
+          .catch((error) => {
+            console.error("Error sending email:", error);
+            alert("❌ Failed to send message. Try again later.");
+          })
+          .finally(() => {
+            // Restore button state
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          });
       });
     }
   }
 
-  handleFormSubmit("contactFormModal");
-  handleFormSubmit("contactFormSection");
+  // ✅ Support multiple forms
+  handleFormSubmit("contactFormModal");   // Home page popup form
+  handleFormSubmit("contactFormSection"); // Contact Us page form
 });
 
     

@@ -54,377 +54,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
-    <style>
-        /* Additional CSS for Contact Page */
-        .breadcrumb {
-            padding: 15px 0;
-            background: #f8f9fa;
-            margin-top: 80px;
-        }
-        
-        .breadcrumb-container {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .breadcrumb-item {
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
-            color: #6c757d;
-        }
-        
-        .breadcrumb-item a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .breadcrumb-item a:hover {
-            color: var(--accent);
-        }
-        
-        .breadcrumb-item:not(:last-child)::after {
-            content: '/';
-            margin: 0 10px;
-            color: #6c757d;
-        }
-        
-        .breadcrumb-item.active {
-            color: var(--dark);
-        }
-        
-        .page-hero {
-            padding: 80px 0;
-            background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(247, 37, 133, 0.05));
-            text-align: center;
-        }
-        
-        .page-hero-content h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .page-hero-content p {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .contact-section {
-            padding: 100px 0;
-            background: white;
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-        
-        .contact-info {
-            padding-right: 20px;
-        }
-        
-        .contact-info h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 25px;
-            color: var(--dark);
-        }
-        
-        .contact-info p {
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 40px;
-        }
-        
-        .contact-details {
-            margin-bottom: 50px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gradient);
-            color: white;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-        
-        .contact-text h4 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-            color: var(--dark);
-        }
-        
-        .contact-text p {
-            color: #555;
-            margin-bottom: 0;
-        }
-        
-        .contact-text a {
-            color: #555;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .contact-text a:hover {
-            color: var(--primary);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f8f9fa;
-            color: var(--primary);
-            border-radius: 50%;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--gradient);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
-        .contact-form {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-        
-        .contact-form h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: var(--dark);
-            text-align: center;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #333;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #e1e1e1;
-            border-radius: 8px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            display: block;
-            width: 100%;
-            background: var(--gradient);
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.3);
-        }
-        
-        .map-section {
-            padding: 0 0 100px;
-        }
-        
-        .map-container {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            height: 450px;
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .faq-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, rgba(67, 97, 238, 0.03), rgba(247, 37, 133, 0.03));
-        }
-        
-        .accordion {
-            margin-top: 50px;
-        }
-        
-        .accordion-item {
-            background: white;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-        }
-        
-        .accordion-header {
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            color: var(--dark);
-        }
-        
-        .accordion-header i {
-            transition: transform 0.3s ease;
-        }
-        
-        .accordion-header.active i {
-            transform: rotate(180deg);
-        }
-        
-        .accordion-content {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-        
-        .accordion-content.active {
-            padding: 0 20px 20px;
-            max-height: 300px;
-        }
-        
-        .accordion-content p {
-            color: #555;
-            line-height: 1.7;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .contact-info {
-                padding-right: 0;
-            }
-            
-            .page-hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .contact-info h2 {
-                font-size: 2.2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .page-hero {
-                padding: 60px 0;
-            }
-            
-            .page-hero-content h1 {
-                font-size: 2.2rem;
-            }
-            
-            .page-hero-content p {
-                font-size: 1.1rem;
-            }
-            
-            .contact-section, .map-section, .faq-section {
-                padding: 70px 0;
-            }
-            
-            .contact-form {
-                padding: 30px;
-            }
-            
-            .map-container {
-                height: 350px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .page-hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .contact-info h2 {
-                font-size: 1.8rem;
-            }
-            
-            .contact-form {
-                padding: 25px 20px;
-            }
-            
-            .contact-item {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .contact-icon {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-        }
-    </style>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function(){
+      emailjs.init({
+        publicKey: "VbJ_sCOwtaRPYKYTz", // apna public key yahan
+      });
+  })();
+</script>
 </head>
 <body>
     <!-- Header -->
@@ -541,34 +180,29 @@
                 
                 <div class="contact-form fade-in">
                     <h3>Send Us a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Your Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" id="subject" class="form-control" placeholder="Enter subject" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" class="form-label">Your Message</label>
-                            <textarea id="message" class="form-control" placeholder="How can we help you?" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
+<form id="contactFormSection" action="javascript:void(0);">
+    <div class="form-group">
+        <label for="contact-name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+        <label for="phone">Mobile Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+    </div>
+    <div class="form-group">
+        <label for="contact-email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </div>
+    <div class="form-group">
+        <label for="contact-subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Enter subject">
+    </div>
+    <div class="form-group">
+        <label for="contact-message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Send Message</button>
+</form>
                 </div>
             </div>
         </div>
@@ -704,19 +338,50 @@
             });
         });
         
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Here you would typically send the form data to a server
-                // For this example, we'll just show an alert
-                alert('Thank you for your message! We will get back to you soon.');
-                contactForm.reset();
-            });
-        }
-        
+
+    // Form submission
+ // Form submission
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactFormSection"); // ✅ fixed ID
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const submitBtn = form.querySelector(".submit-btn");
+      const originalText = submitBtn.innerHTML;
+
+      // Show loader on button
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span class="loader"></span> Sending...`;
+
+      const formData = new FormData(form);
+      const templateParams = {
+        from_name: formData.get("name"),
+        from_email: formData.get("email"),
+        phone: formData.get("phone"),
+        subject: formData.get("subject"),
+        message: formData.get("message"),
+      };
+
+      emailjs.send("service_mxwt4op", "template_im70dnp", templateParams)
+        .then(() => {
+          alert("✅ Message sent successfully!");
+          form.reset();
+        })
+        .catch((error) => {
+          console.error("Error sending email:", error);
+          alert("❌ Failed to send message. Try again later.");
+        })
+        .finally(() => {
+          // Restore button state
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        });
+    });
+  }
+});
+       
         // FAQ Accordion
         const accordionHeaders = document.querySelectorAll('.accordion-header');
         accordionHeaders.forEach(header => {
