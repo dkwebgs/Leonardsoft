@@ -46,12 +46,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" >
 
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
   (function(){
-      emailjs.init("VbJ_sCOwtaRPYKYTz"); // Replace with your EmailJS public key
+      emailjs.init({
+        publicKey: "VbJ_sCOwtaRPYKYTz", // apna public key yahan
+      });
   })();
 </script>
+
 
 </head>
 <body>
@@ -70,7 +73,7 @@
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h2>Get in Touch</h2>
-<form id="contactFormModal">
+<form id="contactFormModal" action="javascript:void(0);">
     <div class="form-group">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -414,7 +417,7 @@
                 </div>
                 
                 <div class="contact-form fade-in">
-<form id="contactFormSection">
+<form id="contactFormSection" action="javascript:void(0);">
     <div class="form-group">
         <label for="contact-name">Your Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required>

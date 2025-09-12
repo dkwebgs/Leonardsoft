@@ -63,32 +63,9 @@
             openModal();
         });
         
-        // Close modal when clicking outside the content
-        contactModal.addEventListener('click', function(e) {
-            if (e.target === contactModal) {
-                closeModal();
-            }
-        });
+
         
-        // Form submission
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            
-            // In a real implementation, you would send this data to your server
-            console.log('Form submitted:', { name, phone, email });
-            
-            // Show success message
-            alert(`Thank you, ${name}! We'll contact you shortly at ${phone} or ${email}.`);
-            
-            // Close modal and reset form
-            closeModal();
-            contactForm.reset();
-        });
+ 
         
         // Open WhatsApp
         function openWhatsApp() {
