@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Leonardsoft Blog - Expert insights on web design, development, SEO, and digital marketing strategies to grow your business">
+    <meta name="keywords" content="web design blog, SEO tips, digital marketing strategies, web development tutorials, e-commerce solutions">
+    <meta name="author" content="Leonardsoft Pvt Ltd">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.leonardsoft.com/blog" />
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Leonardsoft Blog | Digital Marketing & Web Development Insights">
+    <meta property="og:description" content="Expert insights on web design, development, SEO, and digital marketing strategies to grow your business">
+    <meta property="og:image" content="https://leonardsoft.com/images/blog-og-image.jpg">
+    <meta property="og:url" content="https://www.leonardsoft.com/blog">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Leonardsoft Blog | Digital Marketing & Web Development Insights">
+    <meta name="twitter:description" content="Expert insights on web design, development, SEO, and digital marketing strategies to grow your business">
+    <meta name="twitter:image" content="https://leonardsoft.com/images/blog-twitter-image.jpg">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Leonardsoft Blog",
+      "url": "https://www.leonardsoft.com/blog",
+      "description": "Expert insights on web design, development, SEO, and digital marketing strategies",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Leonardsoft Pvt Ltd",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.leonardsoft.com/logo.png"
+        }
+      }
+    }
+    </script>
+    <title>Leonardsoft Blog | Digital Marketing & Web Development Insights</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function(){
+      emailjs.init({
+        publicKey: "VbJ_sCOwtaRPYKYTz",
+      });
+  })();
+</script>
+
+</head>
+<body>
+    <!-- Floating buttons -->
+    <div class="floating-buttons">
+        <div class="floating-btn whatsapp-btn" onclick="openWhatsApp()">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="floating-btn email-btn" onclick="openEmail()">
+            <i class="fas fa-envelope"></i>
+        </div>
+    </div>
+    
+    <!-- Contact Form Modal -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Get in Touch</h2>
+<form id="contactFormModal" action="javascript:void(0);">
+    <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+        <label for="phone">Mobile Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </div>
+    <div class="form-group">
+        <label for="contact-subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Enter subject">
+    </div>
+    <div class="form-group">
+        <label for="contact-message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Submit</button>
+</form>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-rocket"></i>
+                Leonard<span>soft</span>
+            </a>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="web-design-development.html">Web Design & Development</a></li>
+                        <li><a href="seo-optimization.html">SEO Optimization</a></li>
+                        <li><a href="digital-marketing.html">Digital Marketing</a></li>
+                        <li><a href="ecommerce-solutions.html">E-Commerce Solutions</a></li>
+                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                        <li><a href="brand-identity.html">Brand Identity</a></li>
+                    </ul>
+                </li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="cta-button" id="getStartedBtn">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container breadcrumb-container">
+            <div class="breadcrumb-item"><a href="index.html">Home</a></div>
+            <div class="breadcrumb-item active">Blog</div>
+        </div>
+    </div>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Leonardsoft Blog</h2>
+                <p>Expert insights on web design, development, SEO, and digital marketing strategies</p>
+            </div>
+            
+            <div class="blog-content">
+                <div class="blog-posts">
+                    <!-- Featured Post -->
+                    <article class="blog-post featured-post fade-in">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1115&q=80" alt="SEO Trends 2023">
+                            <div class="post-category">SEO Optimization</div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar"></i> October 15, 2023</span>
+                                <span class="post-author"><i class="far fa-user"></i> By Admin</span>
+                                <span class="post-comments"><i class="far fa-comments"></i> 12 Comments</span>
+                            </div>
+                            <h2><a href="blog-post.html">Top 10 SEO Trends to Dominate Search Rankings in 2023</a></h2>
+                            <p>Search engine optimization is constantly evolving. Stay ahead of the curve with these essential SEO trends that will help your website rank higher in 2023. From voice search optimization to E-A-T principles, we cover everything you need to know...</p>
+                            <a href="blog-post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Regular Posts Grid -->
+                    <div class="posts-grid">
+                        <!-- Post 1 -->
+                        <article class="blog-post fade-in">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Web Design Principles">
+                                <div class="post-category">Web Design</div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date"><i class="far fa-calendar"></i> October 10, 2023</span>
+                                </div>
+                                <h3><a href="blog-post.html">7 Essential Web Design Principles for Higher Conversion Rates</a></h3>
+                                <p>Discover how strategic web design can significantly boost your conversion rates and improve user experience on your website...</p>
+                                <a href="blog-post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                        
+                        <!-- Post 2 -->
+                        <article class="blog-post fade-in">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1609921212029-bb5a28e60960?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&q=80" alt="E-commerce Strategies">
+                                <div class="post-category">E-commerce</div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date"><i class="far fa-calendar"></i> October 5, 2023</span>
+                                </div>
+                                <h3><a href="blog-post.html">E-commerce Strategies That Actually Work: Boost Your Online Sales</a></h3>
+                                <p>Learn proven e-commerce strategies to increase your online store's visibility, engagement, and ultimately, sales...</p>
+                                <a href="blog-post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                        
+                        <!-- Post 3 -->
+                        <article class="blog-post fade-in">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Social Media Marketing">
+                                <div class="post-category">Digital Marketing</div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date"><i class="far fa-calendar"></i> October 2, 2023</span>
+                                </div>
+                                <h3><a href="blog-post.html">Social Media Marketing in 2023: What's Working Now</a></h3>
+                                <p>Stay updated with the latest social media marketing trends and strategies that are delivering real results for businesses...</p>
+                                <a href="blog-post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                        
+                        <!-- Post 4 -->
+                        <article class="blog-post fade-in">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Mobile App Development">
+                                <div class="post-category">Mobile Apps</div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date"><i class="far fa-calendar"></i> September 28, 2023</span>
+                                </div>
+                                <h3><a href="blog-post.html">Native vs Hybrid App Development: Which is Right for Your Business?</a></h3>
+                                <p>Understand the pros and cons of native and hybrid mobile app development to make the right choice for your business needs...</p>
+                                <a href="blog-post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                        
+                        <!-- Post 5 -->
+                        <article class="blog-post fade-in">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Content Marketing">
+                                <div class="post-category">Content Marketing</div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date"><i class="far fa-calendar"></i> September 22, 2023</span>
+                                </div>
+                                <h3><a href="blog-post.html">Content Marketing Strategy That Converts: A Step-by-Step Guide</a></h3>
+                                <p>Learn how to create a content marketing strategy that not only attracts visitors but converts them into loyal customers...</p>
+                                <a href="blog-post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                        
+                        <!-- Post 6 -->
+                        <article class="blog-post fade-in">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Website Performance">
+                                <div class="post-category">Web Development</div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date"><i class="far fa-calendar"></i> September 18, 2023</span>
+                                </div>
+                                <h3><a href="blog-post.html">Website Performance Optimization: Speed Up Your Site in 2023</a></h3>
+                                <p>Discover practical techniques to improve your website's loading speed and performance for better user experience and SEO rankings...</p>
+                                <a href="blog-post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination fade-in">
+                        <a href="#" class="page-numbers prev"><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class="page-numbers">1</a>
+                        <a href="#" class="page-numbers current">2</a>
+                        <a href="#" class="page-numbers">3</a>
+                        <a href="#" class="page-numbers">4</a>
+                        <a href="#" class="page-numbers next"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <aside class="blog-sidebar">
+                    <!-- Search Widget -->
+                    <div class="sidebar-widget search-widget fade-in">
+                        <h3 class="widget-title">Search</h3>
+                        <form class="search-form">
+                            <input type="text" placeholder="Search articles...">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    
+                    <!-- Categories Widget -->
+                    <div class="sidebar-widget categories-widget fade-in">
+                        <h3 class="widget-title">Categories</h3>
+                        <ul>
+                            <li><a href="#">Web Design <span>(12)</span></a></li>
+                            <li><a href="#">Web Development <span>(8)</span></a></li>
+                            <li><a href="#">SEO Optimization <span>(15)</span></a></li>
+                            <li><a href="#">Digital Marketing <span>(9)</span></a></li>
+                            <li><a href="#">E-commerce Solutions <span>(7)</span></a></li>
+                            <li><a href="#">Mobile App Development <span>(5)</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Recent Posts Widget -->
+                    <div class="sidebar-widget recent-posts-widget fade-in">
+                        <h3 class="widget-title">Recent Posts</h3>
+                        <div class="recent-post">
+                            <div class="recent-post-image">
+                                <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8f5a07a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80" alt="Recent Post">
+                            </div>
+                            <div class="recent-post-content">
+                                <h4><a href="#">How to Choose the Right CMS for Your Business Website</a></h4>
+                                <span class="post-date">Oct 12, 2023</span>
+                            </div>
+                        </div>
+                        <div class="recent-post">
+                            <div class="recent-post-image">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1115&q=80" alt="Recent Post">
+                            </div>
+                            <div class="recent-post-content">
+                                <h4><a href="#">The Importance of Local SEO for Small Businesses</a></h4>
+                                <span class="post-date">Oct 8, 2023</span>
+                            </div>
+                        </div>
+                        <div class="recent-post">
+                            <div class="recent-post-image">
+                                <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Recent Post">
+                            </div>
+                            <div class="recent-post-content">
+                                <h4><a href="#">UX Design Principles That Improve Conversion Rates</a></h4>
+                                <span class="post-date">Oct 3, 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags Widget -->
+                    <div class="sidebar-widget tags-widget fade-in">
+                        <h3 class="widget-title">Popular Tags</h3>
+                        <div class="tags">
+                            <a href="#">Web Design</a>
+                            <a href="#">SEO</a>
+                            <a href="#">JavaScript</a>
+                            <a href="#">React</a>
+                            <a href="#">WordPress</a>
+                            <a href="#">E-commerce</a>
+                            <a href="#">UX/UI</a>
+                            <a href="#">Digital Marketing</a>
+                            <a href="#">Responsive</a>
+                            <a href="#">PHP</a>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Widget -->
+                    <div class="sidebar-widget cta-widget fade-in">
+                        <h3>Need Professional Help?</h3>
+                        <p>Let our experts handle your digital needs for optimal results</p>
+                        <a href="contact.html" class="cta-button">Get Free Consultation</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content fade-in">
+                <h2>Stay Updated with Digital Insights</h2>
+                <p>Subscribe to our newsletter for the latest tips, trends, and strategies in web design and digital marketing</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="cta-button">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Leonardsoft</h3>
+                    <p>Transforming digital experiences through innovative design, development, and marketing solutions that drive business growth.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="web-design-development.html">Web Design & Development</a></li>
+                        <li><a href="seo-optimization.html">SEO & Digital Marketing</a></li>
+                        <li><a href="ecommerce-solutions.html">E-Commerce Solutions</a></li>
+                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                        <li><a href="brand-identity.html">Brand Identity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Aryan Computer center , balwarganj, sujanganj, jaunpur , uttar pradesh, 222201.</p>
+                    <p><i class="fas fa-phone"></i> +91 9315218918</p>
+                    <p><i class="fas fa-envelope"></i> dkweb2025@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2018 Leonardsoft Pvt Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+    
+    // Scroll animations
+    const faders = document.querySelectorAll('.fade-in');
+    
+    const appearOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -100px 0px"
+    };
+    
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('appear');
+                appearOnScroll.unobserve(entry.target);
+            }
+        });
+    }, appearOptions);
+    
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+    
+    // Modal functionality
+    const contactModal = document.getElementById('contactModal');
+    const getStartedBtn = document.getElementById('getStartedBtn');
+    
+    getStartedBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        contactModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    function closeModal() {
+        contactModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Close modal when clicking outside
+    contactModal.addEventListener('click', (e) => {
+        if (e.target === contactModal) {
+            closeModal();
+        }
+    });
+    
+    // Form submission
+    document.addEventListener("DOMContentLoaded", function () {
+      function handleFormSubmit(formId) {
+        const form = document.getElementById(formId);
+
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const submitBtn = form.querySelector(".submit-btn");
+            const originalText = submitBtn.innerHTML;
+
+            // Show loader on button
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span class="loader"></span> Sending...`;
+
+            const formData = new FormData(form);
+
+            // Map form fields to template variables
+            const templateParams = {
+              from_name: formData.get("name"),
+              from_email: formData.get("email"),
+              phone: formData.get("phone"),
+              subject: formData.get("subject"),
+              message: formData.get("message"),
+            };
+
+            emailjs
+              .send("service_mxwt4op", "template_im70dnp", templateParams)
+              .then(() => {
+                alert("✅ Message sent successfully!");
+                form.reset();
+              })
+              .catch((error) => {
+                console.error("Error sending email:", error);
+                alert("❌ Failed to send message. Try again later.");
+              })
+              .finally(() => {
+                // Restore button state
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+              });
+          });
+        }
+      }
+
+      // ✅ Support multiple forms
+      handleFormSubmit("contactFormModal");   // Home page popup form
+      handleFormSubmit("contactFormSection"); // Contact Us page form
+    });
+    
+    // Floating buttons functionality
+    function openWhatsApp() {
+        window.open('https://wa.me/919315218918', '_blank');
+    }
+    
+    function openEmail() {
+        window.location.href = 'mailto:dkweb2025@gmail.com';
+    }
+ </script>
+</body>
+</html>
